@@ -1,13 +1,173 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bgColor);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+
+  --bgColor: hsl(207, 26%, 17%);
+  --element: hsl(209, 23%, 22%);
+  --text: hsl(0, 0%, 100%);
+
+}
+
+.light {
+  
+  --bgColor: hsl(0, 0%, 98%);
+  --element: hsl(0, 0%, 100%);
+  --text: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 75px;
+  background-color: var(--element);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.header button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container {
+  padding: 20px 75px;
+
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  position: relative;
+}
+
+.search #search-icon {
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  cursor: pointer;
+}
+
+.search input {
+  background-color: var(--element);
+  border: none;
+  color: var(--text);
+  padding: 15px 10px 15px 65px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.search input::placeholder {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+select {
+  background-color: var(--element);
+  border: none;
+  padding: 15px 25px;
+  outline: none;
+  color: var(--text);
+  border: 1px solid var(--bgColor);
+  background-image: var(--bgColor);
+}
+
+option {
+  appearance: none;
+
+}
+
+*:focus {
+  outline: none;
+}
+.countries{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 50px;
+}
+.countries::after{
+  content: "";width: 22%;
+}
+.country{
+  background-color: var(--element);
+  width: 21%;
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--text);
+  
+}
+.cardBody{
+margin: 20px;
+margin-bottom: 40px;
+}
+.cardTitle{
+  font-weight: 800;
+}
+.country span{
+  font-weight: 600;
+  text-transform: capitalize;
+}
+ .toggle-btn{
+   cursor: pointer;
+ }
+
+ @media screen and (max-width: 990px) {
+   .country{
+     width: 30%;
+     max-width: 250px;
+   }
+   
+ }
+ 
+ @media screen and (max-width: 700px) {
+  .country{
+    width: 45%;
+    max-width: 230px;
+  }
+  .filter {
+    flex-direction: column;
+  }
+  .search input{
+    width: 60%;
+    margin-bottom: 15px;
+  }
+  
+  
+}
+@media screen and (max-width: 550px) {
+  .container{
+    padding: 10px;
+  }
+  .countries{
+    justify-content: center;
+  }
+  .country{
+    width: 90%;
+    max-width: none;
+
+  }
+  .search input{
+    width: 70%;
+    margin-bottom: 15px;
+  }
+  
 }
