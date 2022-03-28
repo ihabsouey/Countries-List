@@ -185,6 +185,7 @@ select {
   flex-direction: column;
   justify-content: space-evenly;
   width: 55%;
+
   font-size: 16px;
 }
 
@@ -223,7 +224,9 @@ li {
   border-radius: 5px;
 }
  
-
+.descriptionBody div{
+  margin: 15px 0;
+}
 @media screen and (max-width: 990px) {
   .country {
     width: 30%;
