@@ -1,10 +1,15 @@
 body {
-  margin: 0;
-  padding: 0;
+
   font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bgColor);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
 }
 
 :root {
@@ -16,7 +21,7 @@ body {
 }
 
 .light {
-  
+
   --bgColor: hsl(0, 0%, 98%);
   --element: hsl(0, 0%, 100%);
   --text: hsl(200, 15%, 8%);
@@ -82,92 +87,184 @@ body {
 select {
   background-color: var(--element);
   border: none;
-  padding: 15px 25px;
-  outline: none;
+  padding: 10px 25px;
   color: var(--text);
   border: 1px solid var(--bgColor);
   background-image: var(--bgColor);
+  border-radius: 5px;
 }
 
-option {
-  appearance: none;
 
-}
 
 *:focus {
   outline: none;
 }
-.countries{
+
+.countries {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 50px;
 }
-.countries::after{
-  content: "";width: 22%;
+
+.countries::after {
+  content: "";
+  width: 22%;
 }
-.country{
+
+.country {
   background-color: var(--element);
   width: 21%;
   border-radius: 10px;
   overflow: hidden;
   color: var(--text);
-  
+
 }
-.cardBody{
-margin: 20px;
-margin-bottom: 40px;
+
+.country:hover {
+  transition: 500ms;
+  transform: scale(1.02);
 }
-.cardTitle{
+
+.cardBody {
+  margin: 20px;
+  margin-bottom: 40px;
+}
+
+.cardTitle {
   font-weight: 800;
 }
-.country span{
+
+.country span {
   font-weight: 600;
   text-transform: capitalize;
 }
- .toggle-btn{
-   cursor: pointer;
- }
 
- @media screen and (max-width: 990px) {
-   .country{
-     width: 30%;
-     max-width: 250px;
-   }
-   
- }
- 
- @media screen and (max-width: 700px) {
-  .country{
+.toggle-btn {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 990px) {
+  .country {
+    width: 30%;
+    max-width: 250px;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+  .country {
     width: 45%;
     max-width: 230px;
   }
+
   .filter {
     flex-direction: column;
   }
-  .search input{
+
+  .search input {
     width: 60%;
     margin-bottom: 15px;
   }
-  
-  
+
+
 }
+
 @media screen and (max-width: 550px) {
-  .container{
+  .container {
     padding: 10px;
   }
-  .countries{
+
+  .countries {
     justify-content: center;
   }
-  .country{
+
+  .country {
     width: 90%;
     max-width: none;
 
   }
-  .search input{
+
+  .search input {
     width: 70%;
     margin-bottom: 15px;
   }
-  
+
+}
+
+.Loading {
+  padding-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.backButton {
+  cursor: pointer;
+  background-color: var(--element);
+  border: none;
+  padding: 10px 40px 10px 20px;
+  border-radius: 5px;
+  margin: 20px 0 50px 0;
+}
+
+.CountryDetail {
+  display: flex;
+}
+
+.image {
+  width: 45%;
+}
+
+.image img {
+  width: 80%;
+}
+
+.description {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 55%;
+  font-size: 16px;
+}
+
+.description .name {
+  font-weight: 800;
+  font-size: 24px;
+
+}
+
+.descriptionBody {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+span {
+  font-weight: 600;
+}
+
+ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+}
+
+li {
+  float: left;
+}
+.borderButton{
+  cursor: pointer;
+  background-color: var(--element);
+  border: none;
+  font-size: 12px;
+  margin-left: 10px;
+  padding:  5px 20px;
+  border-radius: 5px;
 }
