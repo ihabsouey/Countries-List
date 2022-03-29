@@ -66,7 +66,7 @@ export const CountryDetail = () => {
                         <span>Border Countries : </span>
                         {country.borders ?
                             country.borders.map((c) => (
-                                <Link key={c} to={"/Countries-list/details/" + c} >
+                                <Link key={c} to={"/Countries-List/details/" + c} >
                                     <button className='borderButton' key={c}>  {c}  </button></Link>
                             ))
                             : <p>None   </p>}
