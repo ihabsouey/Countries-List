@@ -233,6 +233,7 @@ li {
     width: 30%;
     max-width: 250px;
   }
+
   .description{
     justify-content: space-between;
   }
@@ -243,6 +244,15 @@ li {
   .country {
     width: 45%;
     max-width: 230px;
+  }
+  .container{
+    padding-left: 50px ;
+    padding-right: 50px ;
+
+  }
+  .header{
+    padding:20px 50px ;
+
   }
 
   .filter {
@@ -282,7 +292,17 @@ li {
   .container {
     padding: 20px;
   }
+  .filter{
+    padding:0 0 0 20px;
 
+  }
+  .backButton{
+    margin-left: 5%;
+  }
+  .header{
+  padding: 20px 40px ;
+
+  }
   .countries {
     justify-content: center;
   }
@@ -294,7 +314,7 @@ li {
   }
 
   .search input {
-    width: 70%;
+    width: 80%;
     margin-bottom: 15px;
   }
   .CountryDetail{
