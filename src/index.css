@@ -228,7 +228,7 @@ li {
 .descriptionBody div{
   margin: 15px 0;
 }
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1100px) {
   .country {
     width: 30%;
     max-width: 250px;
