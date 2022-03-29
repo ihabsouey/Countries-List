@@ -10,13 +10,19 @@ export const CountryDetail = () => {
     let { name } = useParams();
     const [loading, setLoading] = useState(true)
     const [country, setcountry] = useState({});
+    let urltype = 'name';
+    
+    // console.log(name)
     useEffect(() => {
 
         const getcountry = () => {
-            axios.get('https://restcountries.com/v2/name/' + name)
+             if (name.length<=3)  urltype = 'alpha'  ; 
+             console.log('https://restcountries.com/v3.1/'+urltype+'/'+ name);
+            axios.get('https://restcountries.com/v3.1/' + urltype + '/' + name)
                 .then(response => {
                     setcountry(response.data[0])
                     setLoading(false)
+
                 });
         }
         getcountry();
@@ -42,11 +48,11 @@ export const CountryDetail = () => {
                 </div>
                 <div className='description'>
                     <span className='name'>
-                        {country.name}
+                        {country.name.common}
                     </span>
                     <div className='descriptionBody'>
                         <div>
-                            <span>Native name : </span> {country.nativeName} <br />
+                            <span>Native name : </span> {Object.values(country.name.nativeName)[0].common} <br />
                             <span>Population :</span> {country.population}<br />
                             <span>Region :</span> {country.region}<br />
                             <span>Sub Region :</span> {country.subregion}<br />
@@ -54,14 +60,9 @@ export const CountryDetail = () => {
                         </div>
 
                         <div>
-                            <span>Top Level Domain :</span> {country.topLevelDomain}<br />
-                            <span>Currencies :</span> {country.currencies[0].name}<br />
-                            <span>Languages :</span> <ul>
-                                {country.languages.map((c) => (
-                                    <li key={c.name}>  {c.name} ,&nbsp;  </li>
-                                ))}<br />
-                            </ul>
-                        </div>
+                            <span>Top Level Domain :</span> {country.tld}<br />
+                            <span>Currency :</span> {Object.values(country.currencies)[0].name}<br />
+                            <span> Official Language :</span> {Object.values(country.languages)[0]}  </div>
                     </div>
                     <div className='descriptionFooter'>
                         <span>Border Countries : </span>
