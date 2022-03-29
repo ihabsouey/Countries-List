@@ -12,12 +12,10 @@ export const CountryDetail = () => {
     const [country, setcountry] = useState({});
     let urltype = 'name';
     
-    // console.log(name)
     useEffect(() => {
 
         const getcountry = () => {
              if (name.length<=3)  urltype = 'alpha'  ; 
-             console.log('https://restcountries.com/v3.1/'+urltype+'/'+ name);
             axios.get('https://restcountries.com/v3.1/' + urltype + '/' + name)
                 .then(response => {
                     setcountry(response.data[0])
@@ -68,7 +66,7 @@ export const CountryDetail = () => {
                         <span>Border Countries : </span>
                         {country.borders ?
                             country.borders.map((c) => (
-                                <Link key={c} to={"details/" + c} >
+                                <Link key={c} to={"/Countries-list/details/" + c} >
                                     <button className='borderButton' key={c}>  {c}  </button></Link>
                             ))
                             : <p>None   </p>}

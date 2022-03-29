@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 export const CountriesList = ({ countries, region, country }) => {
     return (
         <div className='countries'>
-
             {countries
                 .filter(country => country.region.includes(region))
                 .filter(cc => cc.name.toLowerCase().includes(country.toLowerCase()))
                 .map((c) => (
-
-                        <Card className='country' key={c.name} >    <Link to={"details/" +c.name} >
+                    
+                    <div key={c.name}  className='country'>
+                        <Card key={c.name} >    <Link to={"details/" + c.name} >
                             <Card.Img height='150px' width="100%" src={c.flags.png} alt='flag' />
-                            </Link>
+                        </Link>
 
                             <Card.Body className='cardBody'>
                                 <Card.Title className='cardTitle'> {c.name}</Card.Title>
@@ -26,9 +26,10 @@ export const CountriesList = ({ countries, region, country }) => {
                             </Card.Body>
 
                         </Card>
-                ))}
+                    </div>
+                )) } 
         </div>
-        
+
     )
 
 }
