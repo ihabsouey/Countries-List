@@ -11,7 +11,7 @@ export const CountriesList = ({ countries, region, country }) => {
                 .filter(cc => cc.name.toLowerCase().includes(country.toLowerCase()))
                 .map((c) => (
 
-                        <Card className='country' key={c.name} >    <Link to={"/details/" +c.name} >
+                        <Card className='country' key={c.name} >    <Link to={"details/" +c.name} >
                             <Card.Img height='150px' width="100%" src={c.flags.png} alt='flag' />
                             </Link>
 

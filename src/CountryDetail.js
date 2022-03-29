@@ -10,15 +10,17 @@ export const CountryDetail = () => {
     let { name } = useParams();
     const [loading, setLoading] = useState(true)
     const [country, setcountry] = useState({});
+    useEffect(() => {
 
-    const getcountry = () => {
-        axios.get('https://restcountries.com/v2/name/' + name)
-            .then(response => {
-                setcountry(response.data[0])
-                setLoading(false)
-            });
-    }
-    useEffect(() => getcountry(), [name])
+        const getcountry = () => {
+            axios.get('https://restcountries.com/v2/name/' + name)
+                .then(response => {
+                    setcountry(response.data[0])
+                    setLoading(false)
+                });
+        }
+        getcountry();
+    }, [name])
 
     if (loading) return <div className='Loading'>
         <h1>Loading</h1><br />
@@ -27,7 +29,7 @@ export const CountryDetail = () => {
     return (
         <div>
 
-            <Link to={'/'} >
+            <Link to={'/Countries-List'} >
                 <button className='backButton'>
                     <FontAwesomeIcon id='search-icon' icon={faArrowLeftLong} />
                     <span>&nbsp;&nbsp;Home</span>
@@ -67,7 +69,7 @@ export const CountryDetail = () => {
                             country.borders.map((c) => (
                                 <Link key={c} to={"/details/" + c} >
                                     <button className='borderButton' key={c}>  {c}  </button></Link>
-                            )) 
+                            ))
                             : <p>None   </p>}
 
                     </div>

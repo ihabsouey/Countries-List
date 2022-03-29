@@ -1,7 +1,7 @@
 {
   "name": "rest-countries",
   "version": "0.1.0",
-  "homepage": "https://ihabsouey.github.io/Countries",
+  "homepage": "https://ihabsouey.github.io/Countries-List",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

@@ -13,6 +13,8 @@ function App() {
        <Routes>
           <Route path="/*" element={<Countries/>} />
           <Route path="/details/:name" element={<CountryDetail />} />
+          <Route path="Countries-list/details/:name" element={<CountryDetail />} />
+          <Route path="Countries-list/*" element={<Countries/>} />
        </Routes>
        </BrowserRouter>
 
