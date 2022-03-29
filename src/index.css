@@ -245,6 +245,9 @@ li {
     width: 45%;
     max-width: 230px;
   }
+  .countries{
+    justify-content: space-around;
+  }
   .container{
     padding-left: 50px ;
     padding-right: 50px ;
@@ -256,6 +259,8 @@ li {
   }
 
   .filter {
+    padding-left: 4% ;
+    padding-right: 50px ;
     flex-direction: column;
   }
 
