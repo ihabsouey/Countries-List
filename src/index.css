@@ -159,12 +159,15 @@ select {
 }
 
 .backButton {
+  border: 0.5px solid rgba(0, 0, 0, 0.493);
+
   cursor: pointer;
   background-color: var(--element);
   border: none;
   padding: 10px 40px 10px 20px;
   border-radius: 5px;
   margin: 20px 0 50px 0;
+  box-shadow: 0 0 30px   black ;
 }
 
 .CountryDetail {
@@ -215,9 +218,12 @@ li {
   float: left;
 }
 .borderButton{
+  box-shadow: 0 0 40px   black ;
+
+
   cursor: pointer;
   background-color: var(--element);
-  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.493);
   font-size: 12px;
   margin-left: 10px;
   padding:  5px 20px;
