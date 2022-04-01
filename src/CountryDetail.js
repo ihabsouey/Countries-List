@@ -11,11 +11,11 @@ export const CountryDetail = () => {
     const [loading, setLoading] = useState(true)
     const [country, setcountry] = useState({});
     let urltype = 'name';
-    
+
     useEffect(() => {
 
         const getcountry = () => {
-             if (name.length<=3)  urltype = 'alpha'  ; 
+            if (name.length <= 3) urltype = 'alpha';
             axios.get('https://restcountries.com/v3.1/' + urltype + '/' + name)
                 .then(response => {
                     setcountry(response.data[0])
@@ -42,25 +42,26 @@ export const CountryDetail = () => {
             </Link>
             <div className='CountryDetail'>
                 <div className='image'>
-                    <img src={country.flags.png} alt='flag' />
+                    <img src={country.flags.png} alt={country.name.common + 'flag'} />
                 </div>
                 <div className='description'>
                     <span className='name'>
                         {country.name.common}
                     </span>
                     <div className='descriptionBody'>
-                        <div>
-                            <span>Native name : </span> {Object.values(country.name.nativeName)[0].common} <br />
-                            <span>Population :</span> {country.population}<br />
-                            <span>Region :</span> {country.region}<br />
-                            <span>Sub Region :</span> {country.subregion}<br />
-                            <span>Capital :</span> {country.capital}
-                        </div>
+                        <ul>
+                            <li>  <span>Native name : </span> {Object.values(country.name.nativeName)[0].common} </li>
+                            <li>   <span>Population :</span> {country.population}</li>
+                            <li>    <span>Region :</span> {country.region}</li>
+                            <li>    <span>Sub Region :</span> {country.subregion}</li>
+                            <li>    <span>Capital :</span> {country.capital}</li>
+                        </ul>
 
-                        <div>
-                            <span>Top Level Domain :</span> {country.tld}<br />
-                            <span>Currency :</span> {Object.values(country.currencies)[0].name}<br />
-                            <span> Official Language :</span> {Object.values(country.languages)[0]}  </div>
+                        <ul>
+                            <li>   <span>Top Level Domain :</span> {country.tld}</li>
+                            <li>   <span>Currency :</span> {Object.values(country.currencies)[0].name}</li>
+                            <li>   <span> Official Language :</span> {Object.values(country.languages)[0]} </li>
+                        </ul>
                     </div>
                     <div className='descriptionFooter'>
                         <span>Border Countries : </span>

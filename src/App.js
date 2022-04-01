@@ -6,20 +6,26 @@ import { Header } from "./Header";
 function App() {
   return (
     <div className="App">
-     <Header />
-     
-     <div className="container">
-       <BrowserRouter>
-       <Routes>
-          <Route path="/*" element={<Countries/>} />
-          <Route path="/details/:name" element={<CountryDetail />} />
-          <Route path="Countries-list/details/:name" element={<CountryDetail />} />
-          <Route path="Countries-list/*" element={<Countries/>} />
-       </Routes>
-       </BrowserRouter>
+      <header>
+
+        <Header />
+      </header>
+      <main>
+
+        <div className="container">
+
+          <BrowserRouter>
+            <Routes>
+              <Route path="/*" element={<Countries />} />
+              <Route path="/details/:name" element={<CountryDetail />} />
+              <Route path="Countries-list/details/:name" element={<CountryDetail />} />
+              <Route path="Countries-list/*" element={<Countries />} />
+            </Routes>
+          </BrowserRouter>
 
 
-     </div>
+        </div>
+      </main>
 
 
     </div>

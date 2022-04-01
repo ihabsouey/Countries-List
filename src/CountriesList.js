@@ -8,6 +8,7 @@ export const CountriesList = ({ countries, region, country }) => {
 
     return (
         <div >
+
             <br />
             {filtredByName.length > 0 ?
                 region ?
@@ -20,17 +21,17 @@ export const CountriesList = ({ countries, region, country }) => {
 
                     <div key={c.name} className='country'>
                         <Card key={c.name} >    <Link to={"details/" + c.name} >
-                            <Card.Img height='150px' width="100%" src={c.flags.png} alt='flag' />
+                            <Card.Img height='150px' width="100%" src={c.flags.png} alt={c.name + 'flag'} />
                         </Link>
 
                             <Card.Body className='cardBody'>
-                                <Card.Title className='cardTitle'> {c.name}</Card.Title>
-                                <Card.Text >
-                                    <span>population :   </span> {c.population}  <br />
-                                    <span>  Region : </span> {c.region}<br />
-                                    <span>  Capital :  </span> {c.capital}
+                                <Card.Title className='cardTitle'>  <h2>{c.name} </h2></Card.Title>
+                                <ul>
 
-                                </Card.Text>
+                                    <li>   <span>population :   </span> {c.population}   </li>
+                                    <li>    <span>  Region : </span> {c.region} </li>
+                                    <li>   <span>  Capital :  </span> {c.capital} </li>
+                                </ul>
                             </Card.Body>
 
                         </Card>
