@@ -3,7 +3,8 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export const CountriesList = ({ countries, region, country }) => {
-    const filtredByRegion = countries.filter(country => country.region.includes(region))
+    const removeIsrael = countries.filter(country => country.name.toLowerCase() !== 'israel' )    
+    const filtredByRegion = removeIsrael.filter(country => country.region.includes(region))
     const filtredByName = filtredByRegion.filter(cc => cc.name.toLowerCase().includes(country.toLowerCase()))
 
     return (
