@@ -9,7 +9,6 @@ export const CountriesList = ({ countries, region, country }) => {
 
     return (
         <div >
-
             <br />
             {filtredByName.length > 0 ?
                 region ?
