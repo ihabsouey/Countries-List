@@ -12,7 +12,7 @@ export const CountriesList = ({ countries, region, country }) => {
             <br />
             {filtredByName.length > 0 ?
                 region ?
-                    <h2>In {region} we have {filtredByRegion.length} countries !</h2>
+                    <h2>In {region} we have {filtredByRegion.length} countries :) </h2>
                     : <h2>In the world we have {filtredByRegion.length} countries</h2>
                 : <h2> Check the country name </h2>
             }
